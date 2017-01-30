@@ -1,0 +1,35 @@
+= form_for @student do |f|
+	.form-group
+		=f.label :first_name
+		=f.text_field :first_name, class: "form-control"
+
+	.form-group
+		=f.label :last_initial
+		=f.text_field	:last_initial, class: "form-control"
+
+	.form-group
+		= label_tag :"day of the week"
+		</br>
+		= radio_button_tag(:scheduled, "Tuesday")
+		= label :scheduled_Tuesday, 'Tuesday'
+		= radio_button_tag(:scheduled, "Wednesday")
+		= label :scheduled_Wednesday, 'Wednesday'
+		= radio_button_tag(:scheduled, "Friday")
+		= label :scheduled_Friday, 'Friday'
+
+	.form-group
+		= label_tag :time
+		= time_select 'time', 'time', {:ampm => true}
+
+	.form-group
+		= label_tag :duration
+		</br>
+		= radio_button_tag(:duration, "30")
+		= label :duration_30, '30'
+		= radio_button_tag(:duration, "60")
+		= label :duration_60, '60'
+		= radio_button_tag(:duration, "custom")
+		= label :duration_custom, 'custom'
+		= f.text_field :duration, class: "form-control"
+
+		= f.submit 'Submit', class: "btn btn-primary"
