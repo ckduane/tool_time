@@ -24,12 +24,11 @@
 	.form-group
 		= label_tag :duration
 		</br>
-		= f.radio_button(:duration, "30")
-		= f.label :duration_30, '30'
-		= f.radio_button(:duration, "60")
-		= f.label :duration_60, '60'
+		= f.radio_button(:duration, 30)
+		= f.label :duration, '30'
+		= f.radio_button(:duration, 60)
+		= f.label :duration, '60'
 		= f.radio_button(:duration, "custom")
-		= f.label :duration_custom, 'custom'
-		= f.text_field :duration, class: "form-control"
+		= f.label :duration, 'custom'
 
-		= f.submit 'Submit', class: "btn btn-primary"
+	= f.submit 'Submit', class: "btn btn-primary"
