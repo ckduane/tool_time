@@ -9,21 +9,24 @@
 Student.create!(
 				first_name: "Kim",
 				last_initial: "N",
-				scheduled: DateTime.new(2017, 1, 3, +15),
+				day: "Tuesday",
+				time: "3:30PM",
 				duration: 30
 				)
 
 Student.create!(
 				first_name: "Franklin",
 				last_initial: "D",
-				scheduled: DateTime.new(2017, 1, 4, +16),
+				day: "Wednesday",
+				time: "3:00PM",
 				duration: 60
 				)
 
 Student.create!(
 				first_name: "Chuck",
 				last_initial: "D",
-				scheduled: DateTime.new(2017, 1, 6, +15.5),
+				day: "Friday",
+				time: "4:00PM",
 				duration: 45
 				)
 

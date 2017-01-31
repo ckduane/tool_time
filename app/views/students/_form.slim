@@ -10,26 +10,25 @@
 	.form-group
 		= label_tag :"day of the week"
 		</br>
-		= radio_button_tag(:scheduled, "Tuesday")
-		= label :scheduled_Tuesday, 'Tuesday'
-		= radio_button_tag(:scheduled, "Wednesday")
-		= label :scheduled_Wednesday, 'Wednesday'
-		= radio_button_tag(:scheduled, "Friday")
-		= label :scheduled_Friday, 'Friday'
+		= f.radio_button(:day, "Tuesday")
+		= f.label :day, 'Tuesday'
+		= f.radio_button(:day, "Wednesday")
+		= f.label :day, 'Wednesday'
+		= f.radio_button(:day, "Friday")
+		= f.label :day, 'Friday'
 
 	.form-group
-		= label_tag :time
-		= time_select 'time', 'time', {:ampm => true}
+		= f.label :time
+		= f.text_field :time, value: f.object.time.strftime("%I:%M %p"), class: "form-control"
 
 	.form-group
 		= label_tag :duration
 		</br>
-		= radio_button_tag(:duration, "30")
-		= label :duration_30, '30'
-		= radio_button_tag(:duration, "60")
-		= label :duration_60, '60'
-		= radio_button_tag(:duration, "custom")
-		= label :duration_custom, 'custom'
-		= f.text_field :duration, class: "form-control"
+		= f.radio_button(:duration, 30)
+		= f.label :duration, '30'
+		= f.radio_button(:duration, 60)
+		= f.label :duration, '60'
+		= f.radio_button(:duration, "custom")
+		= f.label :duration, 'custom'
 
-		= f.submit 'Submit', class: "btn btn-primary"
+	= f.submit 'Submit', class: "btn btn-primary"
